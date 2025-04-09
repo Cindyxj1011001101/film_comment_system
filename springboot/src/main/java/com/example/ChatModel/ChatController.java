@@ -41,6 +41,9 @@ public class ChatController {
             ans.setChatans(result.getOutput().getText());
             return Result.success(ans);
     }
+    
+
+
 
     @GetMapping("/CommentScore")
     public Double CommentScore(@RequestParam String Comment) {
