@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.BookMapper">
+
+    <insert id="insert" parameterType="com.example.entity.Book">
+        insert into book(name,cover,descr,year,author,category_id,country,language,date,page)
+        values (#{name},#{cover},#{descr},#{year},#{author},#{categoryId},#{country},#{language},#{date},#{page})
+    </insert>
+
+    <update id="updateById" parameterType="com.example.entity.Book">
+        update book set name = #{name}, cover = #{cover}, descr = #{descr}, year = #{year}, author = #{author},
+        category_id = #{categoryId}, country = #{country}, language = #{language}, date = #{date},
+        page = #{page}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="java.lang.Integer">
+        delete from book where id = #{id}
+    </delete>
+
+    <select id="selectAll" resultType="com.example.entity.Book">
+        select book.*, bookcategory.name as bookcategoryName from book
+        left join bookcategory on book.category_id = bookcategory.id
+        <where>
+            <if test="name != null">and book.name like concat('%', #{name}, '%')</if>
+            <if test="categoryId != null">and book.category_id = #{categoryId}</if>
+        </where>
+            order by book.id desc
+    </select>
+
+    <select id="selectById" resultType="com.example.entity.Book">
+        select book.*, bookcategory.name as bookcategoryName from book
+        left join bookcategory on book.category_id = bookcategory.id
+        where book.id = #{id}
+    </select>
+
+</mapper>

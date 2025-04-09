@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.BookCommentMapper">
+
+    <insert id="insert" parameterType="com.example.entity.BookComment">
+        insert into bookcomment(book_id, score, comment, user_id, time, type)
+        values (#{bookId}, #{score}, #{comment}, #{userId}, #{time}, #{type})
+    </insert>
+
+    <update id="updateById" parameterType="com.example.entity.BookComment">
+        update bookcomment
+        set book_id = #{bookId},
+            score   = #{score},
+            comment = #{comment},
+            user_id = #{userId},
+            time    = #{time},
+            type    = #{type}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="java.lang.Integer">
+        delete
+        from bookcomment
+        where id = #{id}
+    </delete>
+
+    <select id="selectAll" resultType="com.example.entity.BookComment">
+        select bookcomment.*, book.name as bookName, user.name as userName from bookcomment
+        left join book on bookcomment.book_id = book.id
+        left join user on bookcomment.user_id = user.id
+        <where>
+            <if test="bookName != null">and book.name like concat('%', #{bookName}, '%')</if>
+            <if test="userId != null">and bookcomment.user_id = #{userId}</if>
+            <if test="type != null">and bookcomment.type = #{type}</if>
+            <if test="bookId != null">and bookcomment.book_id = #{bookId}</if>
+        </where>
+        order by bookcomment.id desc
+    </select>
+</mapper>
