@@ -144,8 +144,8 @@
     <div class="ai-chat-container">
       <!-- 触发按钮 -->
       <div class="trigger-icon" @click="toggleChat">
-        <div v-if="!showChat" style="color:#FFFFFF">打开</div>
-        <div v-else style="color:#FFFFFF">关闭</div>
+        <div v-if="!showChat" style="color: #656565; font-weigh:bold">打开</div>
+        <div v-else style="color:#656565; font-weigh:bold">关闭</div>
       </div>
 
       <!-- 侧边栏对话界面 -->
@@ -183,11 +183,18 @@
 import { reactive } from "vue";
 import router from "@/router";
 import {ElMessage} from "element-plus";
+import { ref } from 'vue';
 
+const showChat = ref(false);
+const inputMessage = ref('');
+const messages = ref([
+  {
+    content: '您好！我是AI助手，有什么可以帮您？',
+    sender: 'ai'
+  }
+]);
 const data = reactive({
   user: JSON.parse(localStorage.getItem('system-user') || '{}'),
-  dialogueAwake: false,
-  dialogueWidth: 0
 })
 
 if (!data.user?.id) {
@@ -206,19 +213,6 @@ const logout = () => {
 }
 
 
-
-
-
-import { ref } from 'vue';
-
-const showChat = ref(false);
-const inputMessage = ref('');
-const messages = ref([
-  {
-    content: '您好！我是AI助手，有什么可以帮您？',
-    sender: 'ai'
-  }
-]);
 
 const toggleChat = () => {
   showChat.value = !showChat.value;
@@ -261,10 +255,13 @@ const sendMessage = () => {
 }
 
 .trigger-icon {
-  width: 48px;
-  height: 48px;
-  background: #2c3e50;
-  border-radius: 50% 0 0 50%;
+  width: 80px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  background: #ffffff;
+  border-radius: 12px 0 0 12px;
+  border: 3px  solid rgb(102, 102, 102);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -274,17 +271,20 @@ const sendMessage = () => {
 }
 
 .trigger-icon:hover {
-  background: #34495e;
+  background: #e8f0fc;
   transform: translateX(-5px);
 }
 
 .chat-sidebar {
-  width: 360px;
-  height: 70vh;
-  background: white;
+  width: 500px;
+  height: 80vh;
+  padding:10px;
+  border-radius:12px 0 0 12px;
+  border: 3px  solid rgb(102, 102, 102);
+  background: #ffffff;
   position: fixed;
   right: 0;
-  top: 400px;
+  top: 440px;
   transform: translateY(-50%);
   box-shadow: -2px 0 12px rgba(0,0,0,0.1);
   display: flex;
@@ -295,24 +295,33 @@ const sendMessage = () => {
   flex: 1;
   overflow-y: auto;
   padding: 20px;
+
 }
 
 .message-bubble {
   margin-bottom: 15px;
-  max-width: 80%;
+  max-width: 85%;
   padding: 12px;
   border-radius: 12px;
 }
 
 .message-bubble.user {
-  background: #afafaf;
-  color: white;
+  background: #e4e7ed;
+  color: #000000;
+  border: 1px  solid rgba(102, 102, 102, 0.75);
   margin-left: auto;
+  box-shadow: -2px 0 12px rgba(0,0,0,0.2);
+  margin-top:20px;
+  margin-bottom:20px;
 }
 
 .message-bubble.ai {
-  background: #f1f2f6;
+  background: #ffffff;
+  border: 1px  solid rgba(102, 102, 102, 0.75);
   margin-right: auto;
+  box-shadow: -2px 0 12px rgba(0,0,0,0.2);
+  margin-top:20px;
+  margin-bottom:20px;
 }
 
 .input-container {
@@ -323,15 +332,16 @@ const sendMessage = () => {
 
 input {
   flex: 1;
-  padding: 12px;
-  border: 1px solid #ddd;
+  padding: 15px;
+  border: 1px solid #000000;
   border-radius: 8px;
   margin-right: 10px;
 }
 
 button {
   padding: 0 15px;
-  background: #787878;
+  color: #000000;
+  background:#F8F8FF;
   border: none;
   border-radius: 8px;
   cursor: pointer;
