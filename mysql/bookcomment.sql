@@ -1,0 +1,15 @@
+INSERT INTO `bookcomment` (`id`, `book_id`, `score`, `comment`, `user_id`, `time`, `type`) VALUES (1, 1, 5.0, '书已到，先在此留念。秦老师其人、其书的价值究竟几何，相信时间与广大读者会给出答案。', 1, '2024-10-31 13:07:51', '短评');
+INSERT INTO `bookcomment` (`id`, `book_id`, `score`, `comment`, `user_id`, `time`, `type`) VALUES (2, 2, 4.5, '自我是一个持续的过程，是一种生活实践，是我们所为之事，是我们对时间施加的影响，而非我们存在本身。', 2, '2024-11-18 01:11:01', '短评');
+INSERT INTO `bookcomment` (`id`, `book_id`, `score`, `comment`, `user_id`, `time`, `type`) VALUES (3, 3, 3.0, '松散的灵感记录和漫游中与细节的邂逅，钩沉出其他门类的艺术。这本比起巫鸿别的作品要水得多，感觉像是写别的书剩下的边角料，舍不得浪费，凑一起弄个拼盘端上来。当个零食吃尚可，但重复印图增加书的成本真的有点坑。', 3, '2024-10-17 16:01:54', '短评');
+INSERT INTO `bookcomment` (`id`, `book_id`, `score`, `comment`, `user_id`, `time`, `type`) VALUES (4, 4, 4.0, '雨穴的书真是易读，这大概是我看的最快的长篇小说吧，终于变得像是个会写小说的人了。没想到雨穴还有设计SWLY的功力。小说的三个部分也各有亮点。虽然写好小说是不错，油管半年不更新是不是有点过分。', 4, '2024-07-17 14:46:32', '短评');
+INSERT INTO `bookcomment` (`id`, `book_id`, `score`, `comment`, `user_id`, `time`, `type`) VALUES (5, 5, 3.5, '虽然本质上还是一个都市童话，有时候甚至认为，如果没有那条狗，他俩早就一拍两散了…但是整个文笔还有文风，能够透露出作者希望带来的，给女孩子们的一些正确的价值观，能在一本消遣的小说里体悟到一些道理，有一些反思，已经实属难得。', 5, '2022-11-29 22:01:11', '短评');
+INSERT INTO `bookcomment` (`id`, `book_id`, `score`, `comment`, `user_id`, `time`, `type`) VALUES (6, 6, 5.0, '梁老师真的是无数互联网人心中的女神，文笔牛，思路清晰，是看透商业的高手，也是大侠。等了这么多年，第一本书终于千呼万唤始出来了！书名太棒了！必须下单！必须支持！', 6, '2024-10-20 23:39:09', '短评');
+INSERT INTO `bookcomment` (`id`, `book_id`, `score`, `comment`, `user_id`, `time`, `type`) VALUES (7, 7, 3.0, '确实能写。我指的是效率和速度，而非内容。\r\n\r\n', 1, '2024-05-07 12:45:41', '短评');
+INSERT INTO `bookcomment` (`id`, `book_id`, `score`, `comment`, `user_id`, `time`, `type`) VALUES (8, 8, 4.0, '辛福就像是一只蝴蝶，当你追逐它时，却难以到手；但，当你安静下来，它却有可能降落到你身上。', 2, '2024-11-21 19:06:35', '短评');
+INSERT INTO `bookcomment` (`id`, `book_id`, `score`, `comment`, `user_id`, `time`, `type`) VALUES (9, 9, 3.5, '吃饭顺序按照：蔬菜，蛋白质，碳水顺序走，身体血糖调节更好', 3, '2024-01-02 18:57:07', '短评');
+INSERT INTO `bookcomment` (`id`, `book_id`, `score`, `comment`, `user_id`, `time`, `type`) VALUES (10, 10, 5.0, '你这不挺行的吗，哪平庸了', 4, '2021-02-18 17:59:48', '短评');
+INSERT INTO `bookcomment` (`id`, `book_id`, `score`, `comment`, `user_id`, `time`, `type`) VALUES (38, 10, 3.0, '123', 1, '2025-04-09 13:59:25', '短评');
+INSERT INTO `bookcomment` (`id`, `book_id`, `score`, `comment`, `user_id`, `time`, `type`) VALUES (39, 10, 3.0, '123', 1, '2025-04-09 13:59:29', '短评');
+INSERT INTO `bookcomment` (`id`, `book_id`, `score`, `comment`, `user_id`, `time`, `type`) VALUES (40, 10, 4.5, '非常好的书', 1, '2025-04-09 13:59:51', '短评');
+INSERT INTO `bookcomment` (`id`, `book_id`, `score`, `comment`, `user_id`, `time`, `type`) VALUES (41, 10, 2.5, '不喜欢，很一般', 1, '2025-04-09 14:00:07', '短评');
+INSERT INTO `bookcomment` (`id`, `book_id`, `score`, `comment`, `user_id`, `time`, `type`) VALUES (42, 10, 5.0, '非常非常好，很喜欢，很喜欢！！！', 1, '2025-04-09 14:00:29', '短评');

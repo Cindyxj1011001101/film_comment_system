@@ -34,6 +34,15 @@
       </el-timeline>
     </div>
 
+
+
+
+
+
+
+
+
+
   </div>
 </template>
 
@@ -47,6 +56,12 @@ const data = reactive({
   filmList: []
 })
 
+
+
+
+
+
+
 const goDetail = (id) => {
   location.href = '/filmDetail?id=' + id
 }
@@ -59,3 +74,4 @@ request.get('/film/selectRanking').then(res => {
   data.filmList = res.data
 })
 </script>
+

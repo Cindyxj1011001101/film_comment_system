@@ -25,11 +25,14 @@ const router = createRouter({
         { path: 'bookComment', component: () => import('@/views/manager/BookComment.vue')},
         { path: 'bookCategory', component: () => import('@/views/manager/BookCategory.vue')},
         { path: 'home_2', component: () => import('@/views/manager/home_2.vue')},
+
       ]
     },
+    { path: '/test', component: () => import('@/views/test.vue')},
     { path: '/login', component: () => import('@/views/Login.vue')},
     { path: '/register', component: () => import('@/views/Register.vue')},
     { path: '/chattest', component: () => import('@/views/Chattest.vue')},
+
   ]
 })
 
