@@ -203,7 +203,7 @@
                 :class="['message-bubble', msg.sender]"
             >
               <div class="message-content">{{ msg.content }}
-                <button v-if="showBotton" @click="goDetail()">点此跳转到对应内容</button>
+                <button v-if="msg.sender === 'ai' && msg.isLatest" @click="goDetail()">点此跳转到对应内容</button>
               </div>
             </div>
           </div>
@@ -238,7 +238,8 @@ const inputMessage = ref('');
 const messages = ref([
   {
     content: '您好！我是AI助手，有什么可以帮您？',
-    sender: 'ai'
+    sender: 'ai',
+    isLatest: false
   }
 ]);
 const data = reactive({
@@ -274,22 +275,24 @@ const sendMessage = () => {
   // 用户消息显示
   messages.value.push({
     content: inputMessage.value,
-    sender: 'user'
+    sender: 'user',
+    isLatest: false
   });
   //获取回复
   request.get('/ai/AIChat', {
     params: {
-
       InputMessage: inputMessage.value,
     }
   }).then(res => {
+    messages.value.forEach(msg => msg.isLatest = false);
     showBotton.value=!showBotton.value;
     messages.content = res.data.chatans;
     data.type = res.data.type;
     data.id = res.data.id;
     messages.value.push({
       content: messages.content,
-      sender: 'ai'
+      sender: 'ai',
+      isLatest: true
     });
   })
   inputMessage.value = '';
