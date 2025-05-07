@@ -1,11 +1,5 @@
 package com.example.ChatModel;
 
-import com.alibaba.dashscope.app.Application;
-import com.alibaba.dashscope.app.ApplicationParam;
-import com.alibaba.dashscope.app.ApplicationResult;
-import com.alibaba.dashscope.exception.ApiException;
-import com.alibaba.dashscope.exception.InputRequiredException;
-import com.alibaba.dashscope.exception.NoApiKeyException;
 import com.example.common.Result;
 import com.example.entity.*;
 import com.example.service.BookCategoryService;

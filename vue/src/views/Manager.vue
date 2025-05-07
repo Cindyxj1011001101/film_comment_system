@@ -25,9 +25,9 @@
             router
             style="border: none"
             :default-active="router.currentRoute.value.path"
-            :default-openeds="['1', '2','3', '4']">
+            :default-openeds="['1','2','3','4']">
 
-          <el-sub-menu index="3">
+          <el-sub-menu>
             <template #title>
               <el-icon>
                 <Menu/>
@@ -348,7 +348,7 @@ const goDetail = () => {
   background: #ffffff;
   position: fixed;
   right: 0;
-  top: 330px;
+  top: 430px;
   transform: translateY(-50%);
   box-shadow: -2px 0 12px rgba(0, 0, 0, 0.1);
   display: flex;

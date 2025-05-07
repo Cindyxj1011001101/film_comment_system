@@ -91,9 +91,6 @@
     <!--写评论弹窗-->
     <el-dialog v-model="data.formVisible" title="评论信息" width="50%">
       <el-form :model="data.form" label-width="80px" style="padding-right: 80px">
-        <el-form-item label="打分">
-          <el-rate v-model="data.form.score" allow-half show-score></el-rate>
-        </el-form-item>
         <el-form-item label="内容" v-if="data.form.type==='短评'">
           <el-input :rows="5" type="textarea" v-model="data.form.comment" autocomplete="off" placeholder="请输入内容"/>
         </el-form-item>
