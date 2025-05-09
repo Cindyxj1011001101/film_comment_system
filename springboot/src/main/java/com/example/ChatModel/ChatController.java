@@ -38,7 +38,7 @@ public class ChatController {
                 .user("请根据以下电影评论给出一个合理的电影评分（1-5分，5分为最高，支持 0.5 分间隔）,仅返回一个数值，评论内容：" + Comment)
                 .call()
                 .entity(Double.class);
-        System.out.println(CommentScore);
+        System.out.println("电影评分："+CommentScore);
         return CommentScore;
     }
 

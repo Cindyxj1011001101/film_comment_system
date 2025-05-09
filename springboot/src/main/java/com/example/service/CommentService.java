@@ -1,6 +1,7 @@
 package com.example.service;
 
 import cn.hutool.core.date.DateUtil;
+import com.example.ChatModel.ChatController;
 import com.example.entity.Comment;
 import com.example.mapper.CommentMapper;
 import com.github.pagehelper.PageHelper;
@@ -14,7 +15,8 @@ import java.util.List;
 public class CommentService {
     @Resource
     private CommentMapper commentMapper;
-
+    @Resource
+    private ChatController chatController;
     //查询所有
     public List<Comment> selectAll(Comment comment) {
         List<Comment> list = commentMapper.selectAll(comment);
@@ -29,6 +31,7 @@ public class CommentService {
 
     public void add(Comment comment) {
         comment.setTime(DateUtil.now());
+        comment.setScore(chatController.CommentScore(comment.getComment()));
         commentMapper.insert(comment);
     }
 
